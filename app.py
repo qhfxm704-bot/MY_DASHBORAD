@@ -10,7 +10,8 @@ def home():
 @app.route('/send', methods=['POST'])
 def send():
     skill = request.form.get('skill')
-    skills.append(skill)
+    if skill:
+        skills.append(skill)
     return redirect('/')
 
 if __name__ == '__main__':
